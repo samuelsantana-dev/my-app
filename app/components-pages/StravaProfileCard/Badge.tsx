@@ -15,8 +15,8 @@ const iconComponents = {
 };
 
 const Badge = ({ icon, text, color, flagUrl }: BadgeProps) => {
-  const IconComponent = iconComponents[icon];
-  
+  const IconComponent = icon !== 'flag' ? iconComponents[icon] : undefined;
+
   return (
     <span className={`inline-flex items-center gap-1 bg-gray-50 border border-gray-100 rounded-full px-3 py-1 text-xs ${color ? `text-${color}-500` : ''}`}>
       {icon === 'flag' && flagUrl ? (
@@ -28,11 +28,10 @@ const Badge = ({ icon, text, color, flagUrl }: BadgeProps) => {
           className="rounded-full"
         />
       ) : (
-        <IconComponent className={`w-3 h-3 ${color ? `text-${color}-500` : ''}`} />
+        IconComponent ? <IconComponent className={`w-3 h-3 ${color ? `text-${color}-500` : ''}`} /> : null
       )}
       {text}
     </span>
   );
 };
-
-export default Badge;
+export default Badge
