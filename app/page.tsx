@@ -4,21 +4,6 @@ import { SearchBar } from "./components-pages/SearchBar";
 import { SelectActionCard } from "./components-pages/SelectActionCard";
 
 export default function Home() {
-  const sampleData = {
-  modules: [
-    { name: 'Aliexpress', logo: 'https://cdn.osint.industries/modules/aliexpress.png' },
-    { name: 'Bleacher', logo: 'https://cdn.osint.industries/modules/bleacher.png' },
-    { name: 'Ebay', logo: 'https://cdn.osint.industries/modules/ebay.png' },
-    { name: 'Edf', logo: 'https://cdn.osint.industries/modules/edf.png' },
-    { name: 'Samsung', logo: 'https://cdn.osint.industries/modules/samsung.png' },
-    { name: 'Samsunghealth', logo: 'https://cdn.osint.industries/modules/samsunghealth.png' },
-    { name: 'Spirit', logo: 'https://cdn.osint.industries/modules/spirit.png' },
-    { name: 'Steam', logo: 'https://cdn.osint.industries/modules/steam.png' },
-    { name: 'Thefork', logo: 'https://cdn.osint.industries/modules/thefork.png' },
-  ],
-  cost: 3
-}
-
 const cardsData = [
   {
     title: "Total Users",
@@ -58,7 +43,7 @@ const cardsData = [
       </div>
       
       <div className="w-full max-w-8xl">
-        <PremiumModulesCard data={sampleData} />
+        <PremiumModulesCard />
       </div>
 
       <div className="w-full max-w-8xl">
