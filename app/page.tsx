@@ -4,6 +4,7 @@ import { Users, Activity, Database } from "lucide-react";
 import { PremiumModulesCard } from "./components-pages/PremiumModulesCard";
 import { SearchBar } from "./components-pages/SearchBar";
 import { SelectActionCard } from "./components-pages/SelectActionCard";
+import StravaProfileCard from "./components-pages/StravaProfileCard/indext";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -68,6 +69,10 @@ export default function Home() {
 
       <div className="w-full max-w-8xl">
         <SelectActionCard cards={cardsData} />
+      </div>
+
+      <div>
+        <StravaProfileCard />
       </div>
     </div>
   );
