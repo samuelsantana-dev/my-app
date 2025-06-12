@@ -1,4 +1,0 @@
-# Ignorar arquivos de lock do package.json
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
