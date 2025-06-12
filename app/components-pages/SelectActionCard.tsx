@@ -35,16 +35,16 @@ export function SelectActionCard({ cards }: SelectActionCardProps) {
           <CardContent className="h-[8rem] flex flex-col justify-between p-4">
             {/* Header */}
             <div className="flex items-center justify-between">
-              <CardTitle className="text-sm font-medium text-gray-100">{card.title}</CardTitle>
-              <div className="text-xl text-gray-400">{card.icon}</div>
+              <CardTitle className="text-sm font-medium text-black">{card.title}</CardTitle>
+              <div className="text-xl text-black">{card.icon}</div>
             </div>
 
             {/* Count */}
-            <div className="text-2xl font-bold text-gray-100">{card.count}</div>
+            <div className="text-2xl font-bold text-black">{card.count}</div>
 
             {/* Subtitle */}
             {card.subtitle && (
-              <CardDescription className="text-xs text-gray-400">
+              <CardDescription className="text-xs text-black">
                 {card.subtitle}
               </CardDescription>
             )}
