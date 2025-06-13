@@ -1,15 +1,21 @@
 'use client';
 
 import * as React from 'react';
-import { Card, CardContent, CardTitle, CardDescription } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
+import { Card, CardContent } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
+import GendersModal from './steps/modalGender';
+
+interface StatsItem {
+  id: string;
+  name: string;
+  imageUrl: string;
+}
 
 interface StatsCard {
   title: string;
   count: number | string;
   subtitle?: string;
-  items?: string[];
+  items?: StatsItem[];
   icon: React.ReactNode;
   expandable?: boolean;
 }
@@ -20,6 +26,11 @@ interface SelectActionCardProps {
 
 export function SelectActionCard({ cards }: SelectActionCardProps) {
   const [selectedCard, setSelectedCard] = React.useState<number | null>(null);
+  const [expandedCardIndex, setExpandedCardIndex] = React.useState<number | null>(null);
+
+  const viewModal = (index: number) => {
+    setExpandedCardIndex(index);
+  };
 
   return (
     <div className="m-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1">
@@ -33,47 +44,37 @@ export function SelectActionCard({ cards }: SelectActionCardProps) {
           )}
         >
           <CardContent className="h-[8rem] flex flex-col justify-between p-4">
-            {/* Header */}
-            <div className="flex items-center justify-between">
-              <CardTitle className="text-sm font-medium text-black">{card.title}</CardTitle>
-              <div className="text-xl text-black">{card.icon}</div>
+            <div className="flex justify-between items-center">
+              <div className="text-lg font-semibold">{card.title}</div>
+              {card.icon}
             </div>
-
-            {/* Count */}
-            <div className="text-2xl font-bold text-black">{card.count}</div>
-
-            {/* Subtitle */}
+            <div className="text-3xl font-bold">{card.count}</div>
             {card.subtitle && (
-              <CardDescription className="text-xs text-black">
-                {card.subtitle}
-              </CardDescription>
+              <div className="text-sm text-muted-foreground">{card.subtitle}</div>
             )}
-
-            {/* Badges */}
-            {card.items && card.items.length > 0 && (
-              <div className="flex flex-wrap gap-1 mt-1">
-                {card.items.slice(0, 3).map((item, i) => (
-                  <Badge key={i} variant="outline" className="text-[10px]">
-                    {item}
-                  </Badge>
-                ))}
-                {card.items.length > 3 && (
-                  <Badge variant="default" className="text-[10px]">
-                    +{card.items.length - 3}
-                  </Badge>
-                )}
-              </div>
-            )}
-
-            {/* Expand */}
             {card.expandable && (
               <div className="mt-2 text-right">
-                <span className="text-[10px] text-purple-500 underline cursor-pointer">Expand</span>
+                <span
+                  className="text-[10px] text-purple-500 underline cursor-pointer"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    viewModal(index);
+                  }}
+                >
+                  Expand
+                </span>
               </div>
             )}
           </CardContent>
         </Card>
       ))}
+
+      {expandedCardIndex !== null && (
+        <GendersModal
+          card={cards[expandedCardIndex]} // Passa o card inteiro
+          onClose={() => setExpandedCardIndex(null)}
+        />
+      )}
     </div>
   );
 }

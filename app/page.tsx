@@ -16,37 +16,50 @@ export default function Home() {
   }, []);
 
   const cardsData = [
-    {
-      title: "Total Users",
-      count: "1,234",
-      subtitle: "+12% from last month",
-      items: ["Active", "Registered"],
-      icon: <Users className="h-6 w-6" />,
-      expandable: true
-    },
-    {
-      title: "Active Sessions",
-      count: "567",
-      subtitle: "+8.2% from last week",
-      icon: <Activity className="h-6 w-6" />,
-      expandable: false
-    },
-    {
-      title: "Database Size",
-      count: "45.2 GB",
-      items: ["MySQL", "Backups", "Archives"],
-      icon: <Database className="h-6 w-6" />,
-      expandable: true
-    },
-    {
-      title: "Server Load",
-      count: "78%",
-      subtitle: "Optimal range: 40-70%",
-      items: ["CPU", "Memory", "Disk"],
-      icon: <Database className="h-6 w-6" />,
-      expandable: true
-    }
-  ];
+  {
+    title: "Total Users",
+    count: "1,234",
+    subtitle: "+12% from last month",
+    items: [
+      { id: "1", name: "Active", imageUrl: "https://via.placeholder.com/40?text=A" },
+      { id: "2", name: "Registered", imageUrl: "https://via.placeholder.com/40?text=R" },
+    ],
+    icon: <Users className="h-6 w-6" />,
+    expandable: true,
+  },
+  {
+    title: "Active Sessions",
+    count: "567",
+    subtitle: "+8.2% from last week",
+    items: [], // sem items para testar vazio
+    icon: <Activity className="h-6 w-6" />,
+    expandable: false,
+  },
+  {
+    title: "Database Size",
+    count: "45.2 GB",
+    items: [
+      { id: "3", name: "MySQL", imageUrl: "https://via.placeholder.com/40?text=M" },
+      { id: "4", name: "Backups", imageUrl: "https://via.placeholder.com/40?text=B" },
+      { id: "5", name: "Archives", imageUrl: "https://via.placeholder.com/40?text=A" },
+    ],
+    icon: <Database className="h-6 w-6" />,
+    expandable: true,
+  },
+  {
+    title: "Server Load",
+    count: "78%",
+    subtitle: "Optimal range: 40-70%",
+    items: [
+      { id: "6", name: "CPU", imageUrl: "https://via.placeholder.com/40?text=C" },
+      { id: "7", name: "Memory", imageUrl: "https://via.placeholder.com/40?text=M" },
+      { id: "8", name: "Disk", imageUrl: "https://via.placeholder.com/40?text=D" },
+    ],
+    icon: <Database className="h-6 w-6" />,
+    expandable: true,
+  },
+];
+
 
   if (loading) {
     return (
