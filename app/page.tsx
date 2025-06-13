@@ -39,9 +39,9 @@ export default function Home() {
     title: "Database Size",
     count: "45.2 GB",
     items: [
-      { id: "3", name: "MySQL", imageUrl: "https://via.placeholder.com/40?text=M" },
-      { id: "4", name: "Backups", imageUrl: "https://via.placeholder.com/40?text=B" },
-      { id: "5", name: "Archives", imageUrl: "https://via.placeholder.com/40?text=A" },
+      { id: "3", name: "MySQL", imageUrl: "https://www.mysql.com/common/logos/logo-mysql-170x115.png" },
+      { id: "4", name: "Backups",   imageUrl: "https://cdn-icons-png.flaticon.com/512/3144/3144456.png" },
+      { id: "5", name: "Archives", imageUrl: "https://cdn-icons-png.flaticon.com/512/2991/2991100.png" },
     ],
     icon: <Database className="h-6 w-6" />,
     expandable: true,

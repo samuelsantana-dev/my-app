@@ -82,10 +82,7 @@ export function PremiumModulesCard() {
         </div>
       </div>
 
-      {/* Resto do componente permanece igual... */}
-      {/* Body */}
       <div className="flex flex-col md:flex-row">
-        {/* Modules */}
         <div className="w-full md:flex-1 border-b md:border-b-0 md:border-r border-gray-300 p-5">
           <p className="text-lg font-semibold text-gray-700 mb-4">{translations[language].availableModules}</p>
           <div className="flex flex-wrap justify-start gap-4">
