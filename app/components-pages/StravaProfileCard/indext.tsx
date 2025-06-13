@@ -80,16 +80,6 @@ const StravaProfileCard = () => {
         </div>
       </div>
 
-      {/* Profile Image */}
-      <div className="md:w-64 md:shrink-0">
-         <img
-          src="https://dgalywyr863hv.cloudfront.net/pictures/athletes/3139947/10763598/2/large.jpg"
-          alt="Profile"
-          width={256}
-          height={256}
-          className="w-full h-full object-cover"
-        />
-      </div>
     </div>
   );
 };
