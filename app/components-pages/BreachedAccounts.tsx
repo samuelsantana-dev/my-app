@@ -1,7 +1,7 @@
 import React from 'react';
 import { ShieldAlert, Database, AlertCircle, Skull } from 'lucide-react';
 
-export const DataBreachTable = () => {
+export const BreachedAccounts = () => {
   const breaches = [
     {
       platform: 'Operation Endgame 2.0',
@@ -34,7 +34,7 @@ export const DataBreachTable = () => {
   ];
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-sm">
+    <div className="p-6 rounded-lg">
       <h2 className="text-xl font-semibold mb-4 text-gray-800">Data Breach History</h2>
       
       <div className="border border-gray-200 rounded-lg overflow-hidden">

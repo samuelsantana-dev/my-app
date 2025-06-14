@@ -7,11 +7,12 @@ import { SelectActionCard } from "./components-pages/SelectActionCard";
 import SkypeContactCard from "./components-pages/StravaProfileCard/indext";
 import {EmailAddresses} from "./components-pages/EmailAddresses"
 import { DataBreachTable } from "./components-pages/DataBreachTable";
+import { BreachedAccounts } from "./components-pages/BreachedAccounts";
+import { ProfilePicture } from "./components-pages/ProfilePicture";
 export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simula carregamento de dados
     const timer = setTimeout(() => setLoading(false), 1200);
     return () => clearTimeout(timer);
   }, []);
@@ -87,6 +88,13 @@ export default function Home() {
 
       <div className="w-full max-w-8xl">
         <SelectActionCard cards={cardsData} />
+      </div>
+
+      <div className="w-full max-w-8xl">
+         <div className="flex justify-between">
+           <BreachedAccounts />
+           <ProfilePicture />
+         </div>
       </div>
 
     <div className="w-full max-w-8xl">
