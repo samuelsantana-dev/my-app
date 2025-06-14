@@ -5,7 +5,7 @@ import { PremiumModulesCard } from "./components-pages/PremiumModulesCard";
 import { SearchBar } from "./components-pages/SearchBar";
 import { SelectActionCard } from "./components-pages/SelectActionCard";
 import SkypeContactCard from "./components-pages/StravaProfileCard/indext";
-
+import {EmailAddresses} from "./components-pages/EmailAddresses"
 export default function Home() {
   const [loading, setLoading] = useState(true);
 
@@ -84,6 +84,12 @@ export default function Home() {
         <SelectActionCard cards={cardsData} />
       </div>
 
+    <div className="w-full max-w-8xl">
+      <EmailAddresses 
+        count={2} 
+        emails={['sandro@gmail.com', 'contact@example.com']} 
+      />
+    </div>
       <div>
        <SkypeContactCard
         id="dato.basharuli"
