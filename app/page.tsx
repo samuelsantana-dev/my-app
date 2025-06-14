@@ -6,6 +6,7 @@ import { SearchBar } from "./components-pages/SearchBar";
 import { SelectActionCard } from "./components-pages/SelectActionCard";
 import SkypeContactCard from "./components-pages/StravaProfileCard/indext";
 import {EmailAddresses} from "./components-pages/EmailAddresses"
+import { DataBreachTable } from "./components-pages/DataBreachTable";
 export default function Home() {
   const [loading, setLoading] = useState(true);
 
@@ -78,6 +79,10 @@ export default function Home() {
       
       <div className="w-full max-w-8xl">
         <PremiumModulesCard />
+      </div>
+
+      <div className="w-full max-w-8xl">
+        <DataBreachTable />
       </div>
 
       <div className="w-full max-w-8xl">
