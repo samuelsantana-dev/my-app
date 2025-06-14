@@ -4,7 +4,7 @@ import { Users, Activity, Database } from "lucide-react";
 import { PremiumModulesCard } from "./components-pages/PremiumModulesCard";
 import { SearchBar } from "./components-pages/SearchBar";
 import { SelectActionCard } from "./components-pages/SelectActionCard";
-import StravaProfileCard from "./components-pages/StravaProfileCard/indext";
+import SkypeContactCard from "./components-pages/StravaProfileCard/indext";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -85,7 +85,16 @@ export default function Home() {
       </div>
 
       <div>
-        <StravaProfileCard />
+       <SkypeContactCard
+        id="dato.basharuli"
+        name="Dato Basharuli"
+        username="dato.basharuli"
+        gender="male"
+        age="30"
+        location="Georgia, dusheti"
+        contactType="Skype4Consumer"
+        imageUrl="https://dgalywyr863hv.cloudfront.net/pictures/athletes/3139947/10763598/2/large.jpg"
+      />
       </div>
     </div>
   );
