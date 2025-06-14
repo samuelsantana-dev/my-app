@@ -1,15 +1,12 @@
 import { ChevronDown, Mail, Copy, Search } from 'lucide-react';
-
+import { copyToClipboard } from '@/lib/utils';
 interface EmailAddressesProps {
   count?: number;
   emails: string[];
 }
 
 export function EmailAddresses({ count = 1, emails }: EmailAddressesProps) {
-    function copyToClipboard(email: string) {
-      navigator.clipboard.writeText(email);
-      alert('Email copied to clipboard!');
-    }
+    
   return (
     <div className="border rounded mt-2.5 min-w-max">
       <div className="flex items-center justify-start px-3 py-2">

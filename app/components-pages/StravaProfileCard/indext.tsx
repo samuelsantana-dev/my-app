@@ -1,4 +1,5 @@
 import { Copy, Search } from 'lucide-react';
+import { copyToClipboard } from '@/lib/utils';
 interface SkypeContactCardProps {
   id: string;
   name: string;
@@ -39,7 +40,7 @@ export default function SkypeContactCard({
         <div className="flex items-center gap-2">
           <p><span className="font-medium">Name:</span> {name}</p>
           <button
-            onClick={() => navigator.clipboard.writeText(name)}
+            onClick={() => copyToClipboard(name)}
             className="ml-2 px-2 py-1 bg-gray-200 rounded hover:bg-gray-300"
             title="Copiar nome"
           >

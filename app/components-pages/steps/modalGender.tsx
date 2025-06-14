@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Copy, X } from 'lucide-react';
+import { copyToClipboard } from '@/lib/utils';
 import Image from 'next/image';
 
 interface StatsItem {
@@ -30,7 +31,7 @@ export default function GendersModal({ card, onClose }: GendersModalProps) {
 
   const handleCopy = async (text: string, id: string) => {
     try {
-      await navigator.clipboard.writeText(text);
+      await copyToClipboard(text);
       setCopiedId(id);
       setTimeout(() => setCopiedId(null), 2000);
     } catch (err) {
