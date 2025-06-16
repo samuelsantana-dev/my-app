@@ -90,9 +90,12 @@ export default function Home() {
         <SelectActionCard cards={cardsData} />
       </div>
 
-      <div className="w-full max-w-8xl">
-         <div className="flex justify-between">
-           <BreachedAccounts />
+      <div className="w-full max-w-8xl flex justify-between flex-wrap gap-4">
+        <div className="w-full max-w-8xl">
+          <BreachedAccounts />
+        </div>
+         <div className="">
+           
            <ProfilePicture />
          </div>
       </div>
@@ -100,10 +103,10 @@ export default function Home() {
     <div className="w-full max-w-8xl">
       <EmailAddresses 
         count={2} 
-        emails={['sandro@gmail.com', 'contact@example.com']} 
+        emails={['sandro@gmail.com']} 
       />
     </div>
-      <div>
+      <div className="w-full max-w-8xl">
        <SkypeContactCard
         id="dato.basharuli"
         name="Dato Basharuli"
