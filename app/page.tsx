@@ -10,6 +10,7 @@ import { DataBreachTable } from "./components-pages/DataBreachTable";
 import { BreachedAccounts } from "./components-pages/BreachedAccounts";
 import { ProfilePicture } from "./components-pages/ProfilePicture";
 import PaletteView from "./components-pages/PalletView";
+import { Timeline } from "./components-pages/TimeLine";
 export default function Home() {
   const [loading, setLoading] = useState(true);
 
@@ -104,6 +105,10 @@ const edges = [
     <div className="min-h-screen w-full flex flex-col items-center justify-center gap-6 p-4">
       <div className="w-full max-w-8xl">
         <SearchBar />
+      </div>
+
+      <div className="w-full max-w-8xl">
+        <Timeline />
       </div>
       
       <div className="w-full max-w-8xl">
