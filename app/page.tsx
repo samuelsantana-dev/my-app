@@ -9,7 +9,7 @@ import {EmailAddresses} from "./components-pages/EmailAddresses"
 import { DataBreachTable } from "./components-pages/DataBreachTable";
 import { BreachedAccounts } from "./components-pages/BreachedAccounts";
 import { ProfilePicture } from "./components-pages/ProfilePicture";
-import TimelineView from "./components-pages/TimelineView";
+import PaletteView from "./components-pages/PalletView";
 export default function Home() {
   const [loading, setLoading] = useState(true);
 
@@ -73,37 +73,33 @@ export default function Home() {
     );
   }
 
-  const timelineData = [
-    {
-      type: 'Lastest Activity',
-      events: [
-        { year: 2014, label: 'Strava', icon: '🏃‍♂️' },
-        { year: 2016, label: 'Trello', icon: '📋' },
-        { year: 2025, label: 'Reloj', icon: '⏱️' },
-      ],
-    },
-    {
-      type: 'Acct. Creation',
-      events: [
-        { year: 2014, label: 'Strava', icon: '🏃‍♂️' },
-        { year: 2016, label: 'Trello', icon: '📋' },
-        { year: 2022, label: 'Garmin', icon: '⌚' },
-      ],
-    },
-    {
-      type: 'Hibp',
-      events: [
-        { year: 2008, label: 'Patreon', icon: '🔓' },
-        { year: 2012, label: 'Dropbox', icon: '📦' },
-        { year: 2023, label: 'Data Leak', icon: '⚠️' },
-      ],
-    },
-  ];
-  
-  const startYear = 2008;
-  const endYear = 2025;
-  const years = Array.from({ length: endYear - startYear + 1 }, (_, i) => startYear + i);
+const nodes = [
+  { id: 'padlet1', data: { label: 'Padlet' }, position: { x: 100, y: 100 } },
+  { id: 'padlet2', data: { label: 'Padlet' }, position: { x: 100, y: 200 } },
+  { id: 'bandlab', data: { label: 'Bandlab' }, position: { x: 250, y: 150 } },
+  { id: 'trello', data: { label: 'Trello' }, position: { x: 400, y: 100 } },
+  { id: 'upwork', data: { label: 'Upwork' }, position: { x: 550, y: 150 } },
+  { id: 'growth', data: { label: 'Growth' }, position: { x: 700, y: 150 } },
+  { id: 'mapmyrun', data: { label: 'MapMyRun' }, position: { x: 850, y: 150 } },
+  { id: 'strava', data: { label: 'Strava' }, position: { x: 300, y: 350 } },
+  { id: 'garmin', data: { label: 'Garmin' }, position: { x: 450, y: 350 } },
+  { id: 'padlet3', data: { label: 'Padlet' }, position: { x: 600, y: 350 } },
+  { id: 'polarsteps', data: { label: 'Polarsteps' }, position: { x: 750, y: 350 } },
+  // outros nodes podem ser adicionados aqui de forma similar...
+];
 
+const edges = [
+  { id: 'e1', source: 'padlet1', target: 'padlet2', label: '' },
+  { id: 'e2', source: 'bandlab', target: 'padlet1', label: '' },
+  { id: 'e3', source: 'trello', target: 'padlet1', label: '' },
+  { id: 'e4', source: 'upwork', target: 'padlet1', label: '' },
+  { id: 'e5', source: 'growth', target: 'padlet1', label: '' },
+  { id: 'e6', source: 'mapmyrun', target: 'padlet1', label: '' },
+  { id: 'e7', source: 'strava', target: 'bandlab', label: '' },
+  { id: 'e8', source: 'garmin', target: 'bandlab', label: '' },
+  { id: 'e9', source: 'padlet3', target: 'bandlab', label: '' },
+  { id: 'e10', source: 'polarsteps', target: 'bandlab', label: '' },
+];
   return (
     <div className="min-h-screen w-full flex flex-col items-center justify-center gap-6 p-4">
       <div className="w-full max-w-8xl">
@@ -115,7 +111,7 @@ export default function Home() {
       </div>
 
       <div className="w-full max-w-8xl">
-        <TimelineView timelineData={timelineData} years={years} />
+         <PaletteView nodes={nodes} edges={edges} />
       </div>
 
       <div className="w-full max-w-8xl">
