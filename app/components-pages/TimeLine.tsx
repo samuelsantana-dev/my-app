@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { TimelineItem } from './TimelineItem';
-import { ChevronDown, Plus, Minus, RotateCcw } from 'lucide-react';
+import {  Plus, Minus, RotateCcw } from 'lucide-react';
 
 export interface TimelineEvent {
   id: string;
@@ -59,15 +59,6 @@ export const Timeline: React.FC = () => {
     setSelectedEvent(null);
     if (timelineContainerRef.current) {
       timelineContainerRef.current.scrollLeft = 0;
-    }
-  };
-
-  const getCategoryLabel = (category: string) => {
-    switch (category) {
-      case 'latest': return 'Latest Activity';
-      case 'creation': return 'Acct. Creation';
-      case 'hibp': return 'Hibp';
-      default: return category;
     }
   };
 
