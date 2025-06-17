@@ -9,6 +9,7 @@ import {EmailAddresses} from "./components-pages/EmailAddresses"
 import { DataBreachTable } from "./components-pages/DataBreachTable";
 import { BreachedAccounts } from "./components-pages/BreachedAccounts";
 import { ProfilePicture } from "./components-pages/ProfilePicture";
+import TimelineView from "./components-pages/TimelineView";
 export default function Home() {
   const [loading, setLoading] = useState(true);
 
@@ -72,6 +73,37 @@ export default function Home() {
     );
   }
 
+  const timelineData = [
+    {
+      type: 'Lastest Activity',
+      events: [
+        { year: 2014, label: 'Strava', icon: '🏃‍♂️' },
+        { year: 2016, label: 'Trello', icon: '📋' },
+        { year: 2025, label: 'Reloj', icon: '⏱️' },
+      ],
+    },
+    {
+      type: 'Acct. Creation',
+      events: [
+        { year: 2014, label: 'Strava', icon: '🏃‍♂️' },
+        { year: 2016, label: 'Trello', icon: '📋' },
+        { year: 2022, label: 'Garmin', icon: '⌚' },
+      ],
+    },
+    {
+      type: 'Hibp',
+      events: [
+        { year: 2008, label: 'Patreon', icon: '🔓' },
+        { year: 2012, label: 'Dropbox', icon: '📦' },
+        { year: 2023, label: 'Data Leak', icon: '⚠️' },
+      ],
+    },
+  ];
+  
+  const startYear = 2008;
+  const endYear = 2025;
+  const years = Array.from({ length: endYear - startYear + 1 }, (_, i) => startYear + i);
+
   return (
     <div className="min-h-screen w-full flex flex-col items-center justify-center gap-6 p-4">
       <div className="w-full max-w-8xl">
@@ -80,6 +112,10 @@ export default function Home() {
       
       <div className="w-full max-w-8xl">
         <PremiumModulesCard />
+      </div>
+
+      <div className="w-full max-w-8xl">
+        <TimelineView timelineData={timelineData} years={years} />
       </div>
 
       <div className="w-full max-w-8xl">
