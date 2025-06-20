@@ -11,9 +11,10 @@ import { BreachedAccounts } from "./components-pages/BreachedAccounts";
 import { ProfilePicture } from "./components-pages/ProfilePicture";
 import PaletteView from "./components-pages/PalletView";
 import { Timeline } from "./components-pages/TimeLine";
+import PhoneHintComposer from "./components-pages/Teste/PhoneHintComposer";
 export default function Home() {
   const [loading, setLoading] = useState(true);
-
+  const [country, setCountry] = useState("2");
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 1200);
     return () => clearTimeout(timer);
@@ -86,7 +87,6 @@ const nodes = [
   { id: 'garmin', data: { label: 'Garmin' }, position: { x: 450, y: 350 } },
   { id: 'padlet3', data: { label: 'Padlet' }, position: { x: 600, y: 350 } },
   { id: 'polarsteps', data: { label: 'Polarsteps' }, position: { x: 750, y: 350 } },
-  // outros nodes podem ser adicionados aqui de forma similar...
 ];
 
 const edges = [
@@ -106,7 +106,22 @@ const edges = [
       <div className="w-full max-w-8xl">
         <SearchBar />
       </div>
-
+    <div className="w-full max-w-8xl">
+       <PhoneHintComposer
+        title="📞 Phone Hint Composer"
+        phoneLabel="+551***5***0163"
+        hints={['0x', '0x', '0x', '0x', '0x', '0x', '0x', '0x', '0x', '0x', '0x']}
+        mask={['*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*']}
+        result={['*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*']}
+        countryOptions={[
+          { value: '+1', label: '🇺🇸 United States' },
+          { value: '+55', label: '🇧🇷 Brazil' },
+        ]}
+        selectedCountry={country}
+        onCountryChange={setCountry}
+        note="Prefix: (Country: United States of America). Their phone numbers are usually 10-digits long."
+      />
+    </div>
       <div className="w-full max-w-8xl">
         <Timeline />
       </div>
